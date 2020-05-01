@@ -1,0 +1,64 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Fontaine Thompson</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyles.css' %}"/>
+</head>
+
+<body>
+<header>
+<h1>Fontaine Thompson</h1>
+<nav>
+
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="highlights.html">Highlights</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+
+	
+	<center> <h2>Contact Me</h2> </center>
+		<form method="post" action="{% url 'contact' %}">
+	{% csrf_token %}	
+  <fieldset>
+      <legend>Your Contact Info</legend>
+      <p>
+		<label>Name: </label><br/>
+		<input type="text" name="name" required placeholder="Enter name"/>
+		</p>
+		<p>
+		<label>Email:</label><br/>
+		<input type="email" name="email" required placeholder="Enter your email address"/>
+		</p>
+		<p>
+		<label>Message: </label><br/>
+		<textarea name="message" id="message" placeholder="Type message here..." rows="5" cols="40"></textarea> 
+           </p>
+		   
+		 <input type="submit" />
+  </fieldset>
+	</form>
+	
+
+
+
+
+
+<footer>
+
+<em>Copyright &copy; 2020 <a href="mailto:fontainet023@gmail.com">Fontaine Thompson</a></em>
+
+</footer>
+</body>
+
+
+</html>
